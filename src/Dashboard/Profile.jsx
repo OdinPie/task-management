@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
@@ -13,6 +14,10 @@ const Profile = () => {
             <div>
             <h1 className='text-3xl text-center font-bold text-blue-800'>{user?.displayName}</h1>
             <h1 className='text-2xl text-center font-bold text-blue-800'>{user?.email}</h1>
+            </div>
+            <div>
+            <Link to='/addTask'><button className="btn ml-24 mt-10">Add New Task</button></Link>
+
             </div>
             
         </div>

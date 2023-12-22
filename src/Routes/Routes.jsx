@@ -4,6 +4,7 @@ import Home from "../Home/Home";
 import Register from "../Authentication/Register";
 import Login from "../Authentication/Login";
 import Dashboard from "../Dashboard/Dashboard";
+import AddTask from "../Dashboard/AddTask";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard',
                 element: <Dashboard></Dashboard>
+            },
+            {
+                path: '/addTask',
+                element: <AddTask></AddTask>
             }
         ]
     }

@@ -18,38 +18,38 @@ const Register = () => {
         const premiumTaken = null;
         const info = {displayName,email,photoURL,premiumTaken};
         
-        //creating user in firebase
-        // const isValid = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9])/.test(password);
+        // creating user in firebase
+        const isValid = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9])/.test(password);
         // console.log(isValid);
-        // if(isValid){
-        //     //usersignup
-        //     createUser(email,password)
-        // .then(data=> {
-        //     updateUser(displayName, photoURL);
-        //     axiosPublic.post('/users',info)
-        //     Swal.fire({
-        //         title: "Good job!",
-        //         text: "Registration Successful!",
-        //         icon: "success"
-        //       });
-            
-        // })
-        // .catch(err=>{
-        //     console.log(err);
-        //     Swal.fire({
-        //         icon: "error",
-        //         title: "Oops...",
-        //         text: `${err.message}`
-        //       });
-        // })
-        // }
-        // else{
-        //     Swal.fire(
-        //         `Password should contain Capital letter, numbers and special characters`,
-        //         'Could not Create Account',
-        //         'question'
-        //       )
-        // }
+        if(isValid){
+            //usersignup
+            createUser(email,password)
+        .then(data=> {
+            updateUser(displayName, photoURL);
+            // axiosPublic.post('/users',info)
+            Swal.fire({
+                title: "Good job!",
+                text: "Registration Successful!",
+                icon: "success"
+              });
+            navigate('/dashboard');
+        })
+        .catch(err=>{
+            console.log(err);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: `${err.message}`
+              });
+        })
+        }
+        else{
+            Swal.fire(
+                `Password should contain Capital letter, numbers and special characters`,
+                'Could not Create Account',
+                'question'
+              )
+        }
         
     }
     return (

@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import useAxiosPublic from '../Hooks/useAxiosPublic';
+import { useNavigate } from 'react-router-dom';
 
 
 const GoogleAuth = () => {
     const { googleSignIn } = useContext(AuthContext);
     const axiosPublic = useAxiosPublic();
+    const navigate = useNavigate();
     const handleGoogle = () =>{
         googleSignIn()
         .then(result =>{
@@ -18,7 +20,8 @@ const GoogleAuth = () => {
                 premiumTaken: premiumTaken
             }
 
-            axiosPublic.post('/users',userInfo)
+            // axiosPublic.post('/users',userInfo)
+            navigate('/dashboard');
         })
         
     }

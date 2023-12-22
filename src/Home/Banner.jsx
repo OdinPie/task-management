@@ -16,7 +16,7 @@ const Banner = () => {
                 <Lottie animationData={task} loop={true}></Lottie>
             </div>
             </div>
-            <div className='flex justify-center -m-20'>
+            <div className='flex justify-center'>
                 
                 <Link to='/register'><button className="btn animate-pulse bg-yellow-400 text-black">Let's Explore!</button></Link>
             </div>

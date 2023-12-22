@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.taskContainer{
+  background-color: #c9bcc3;
+  width: 200px;
+  height: 500px;
+  overflow-y: scroll;
+  border: solid grey 1px;
+  
+}
+
+.taskCard{
+  overflow-y: scroll;
+}
+
+.taskCard::-webkit-scrollbar{
+  display: none;
+}
+
+.taskTitle{
+  padding: 8px;
+  background-color: pink;
+  text-align: center;
+}
+
+.taskList{
+  padding: 3px;
+  transition: background-color 0.2s ease;
+  flex-grow: 1;
+  min-height: 100px;
+}

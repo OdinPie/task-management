@@ -30,7 +30,9 @@ const TaskCard = ({title, tasks, id}) => {
                             {...provided.droppableProps}
                             isDraggingOver={snapshot.isDraggingOver}
                         >
-                            <Task task={{id:123, title:"make me mad"}} index={1}></Task>
+                            {
+                                tasks && tasks.length && tasks.map((task, index)=><Task key={index} index={index} task={task}></Task>)
+                            }
 
                            {provided.placeholder} 
                         </TaskList>

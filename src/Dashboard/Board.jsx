@@ -9,7 +9,7 @@ const Board = () => {
         axiosPublic.get('tasks')
         .then(res=>setTasks(res.data))
     },[axiosPublic])
-    console.log(tasks);
+    
     return (
         <div>
             <div className="overflow-x-auto">

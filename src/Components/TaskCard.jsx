@@ -24,7 +24,8 @@ const TaskCard = ({title, tasks, id}) => {
 
             <Droppable droppableId={id}>
                     {(provided , snapshot)=>{
-                        <TaskList
+                        {return (
+                            <TaskList
                         ref={provided.innerRef}
                             {...provided.droppableProps}
                             isDraggingOver={snapshot.isDraggingOver}
@@ -33,6 +34,8 @@ const TaskCard = ({title, tasks, id}) => {
 
                            {provided.placeholder} 
                         </TaskList>
+                        )}
+                        
                     }}
             </Droppable>
         </div>

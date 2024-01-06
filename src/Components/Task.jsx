@@ -50,11 +50,12 @@ const Task = ({task, index}) => {
     // )
     return (
         <Draggable draggableId={`${task.id}`} key={`${task.id}`} index={index}>
-            {(provided,snapshot) => (
-                <Container
+            {(provided,snapshot) => {
+                {return (
+                    <Container
+                ref={provided.innerRef}
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
-                ref={provided.innerRef}
                 isDragging={snapshot.isDragging}
                 >
                     <div style={{ display: "flex" , justifyContent: "start", padding:2 }}>
@@ -72,7 +73,9 @@ const Task = ({task, index}) => {
 
                     {provided.placeholder}
                 </Container>
-            )}
+                )}
+                
+            }}
         </Draggable>
     );
 };
